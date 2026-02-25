@@ -8,6 +8,7 @@ import plotly.graph_objects as go
 from datetime import timedelta
 import sys
 from pathlib import Path
+import os
 sys.path.insert(0, str(Path(__file__).parent))
 
 from data_loader import load_data
@@ -18,7 +19,22 @@ from vmd_decomposer import VMDDecomposer
 # ─────────────────────────────────────────────────────────────────────────────
 #  CONFIG — update CSV_PATH to point to your file
 # ─────────────────────────────────────────────────────────────────────────────
-CSV_PATH = "https://raw.githubusercontent.com/SahilJain0123/ai-based-crop-price-prediction/main/data/onion_data.csv"
+
+# 1. Get the directory where app.py lives
+BASE_DIR = Path(__file__).resolve().parent
+
+# 2. Point to the CSV inside the data folder
+# This creates a path like: /mount/src/ai-based-crop-price-prediction/data/onion_data.csv
+CSV_PATH = BASE_DIR / "data" / "onion_data.csv"
+
+# 3. Add a Safety Check
+if not CSV_PATH.exists():
+    st.error(f"🚨 Data file not found at {CSV_PATH}")
+    st.write("Current Directory Contents:", os.listdir(BASE_DIR))
+    st.stop()
+
+# 4. Load your data
+df = pd.read_csv(CSV_PATH)
 
 # ─────────────────────────────────────────────────────────────────────────────
 #  PAGE SETUP
