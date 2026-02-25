@@ -18,7 +18,7 @@ from vmd_decomposer import VMDDecomposer
 # ─────────────────────────────────────────────────────────────────────────────
 #  CONFIG — update CSV_PATH to point to your file
 # ─────────────────────────────────────────────────────────────────────────────
-CSV_PATH = r"https://github.com/SahilJain0123/ai-based-crop-price-prediction/blob/main/data/onion_data.csv"
+CSV_PATH = "https://raw.githubusercontent.com/SahilJain0123/ai-based-crop-price-prediction/main/data/onion_data.csv"
 
 # ─────────────────────────────────────────────────────────────────────────────
 #  PAGE SETUP
