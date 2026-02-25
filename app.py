@@ -18,7 +18,7 @@ from vmd_decomposer import VMDDecomposer
 # ─────────────────────────────────────────────────────────────────────────────
 #  CONFIG — update CSV_PATH to point to your file
 # ─────────────────────────────────────────────────────────────────────────────
-CSV_PATH = r"C:\Users\sahil\OneDrive\Desktop\onion_data.csv"
+CSV_PATH = "onion_data.csv"
 
 # ─────────────────────────────────────────────────────────────────────────────
 #  PAGE SETUP
